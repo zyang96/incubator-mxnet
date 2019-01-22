@@ -42,7 +42,7 @@ dir
 
 $src='
     using Pkg
-    Pkg.activate(".\julia")
+    Pkg.activate(".\\julia")
     Pkg.build()
     Pkg.test()
 '
