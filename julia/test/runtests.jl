@@ -32,8 +32,6 @@ end
 
 @info "libmxnet version => $(mx.LIB_VERSION[])"
 
-@test 1 == 2
-
 const BASEDIR = joinpath(@__DIR__, "..")
 
 include(joinpath(@__DIR__, "common.jl"))
