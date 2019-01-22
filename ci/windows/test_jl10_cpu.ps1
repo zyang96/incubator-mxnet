@@ -48,5 +48,5 @@ $src='
 '
 
 $src > .\ci-build.jl
-& $JULIA .\ci-build.jl
+& $JULIA .\ci-build.jl 2>&1 | %{ "$_" }
 if (! $?) { Throw ("Error") }
