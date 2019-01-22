@@ -38,15 +38,13 @@ if (! $?) { Throw ("Error on installing Julia") }
 
 & $JULIA -e "using InteractiveUtils; versioninfo()"
 
-# workaround a bug of Julia 0.7
-# use PackageSpec(name = "MXNet", path = "...") if we drop the 0.7 support
-Copy-Item -Path .\julia -Recurse -Destination "$env:JULIA_DEPOT_PATH\dev\MXNet"
+dir
 
 $src='
     using Pkg
-    Pkg.develop("MXNet")
-    Pkg.build("MXNet")
-    Pkg.test("MXNet")
+    Pkg.activate(".\\julia")
+    Pkg.build()
+    Pkg.test()
 '
 
 $src > .\ci-build.jl

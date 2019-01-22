@@ -50,3 +50,4 @@ REQUIRE
 include/*
 .*.iml
 .*.json.ref
+julia/Project.toml
